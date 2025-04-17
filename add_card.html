@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image: url('pokemon.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+  <header>
+    <h1>List Your Card For Sale or Trade</h1>
+  </header>
+
+  <main>
+    <form id="add-card-form">
+      <div class="form-row">
+        <label for="card-name">Card Name:</label>
+        <input type="text" id="card-name" name="card-name" required><br><br>
+
+        <label for="set-name">Set Name:</label>
+        <input type="text" id="set-name" name="set-name" required><br><br>
+
+        <label for="condition">Condition:</label>
+        <select id="condition" name="condition" required>
+          <option value="">Select Condition</option>
+          <option value="Mint">Mint</option>
+          <option value="Near Mint">Near Mint</option>
+          <option value="Excellent">Excellent</option>
+          <option value="Good">Good</option>
+          <option value="Played">Played</option>
+        </select><br><br>
+      </div>
+
+      <div class="form-row">
+        <label for="Trade or Sale">Trade, Sale or Combo:</label>
+        <select id="Trade or Sale" name="Trade or Sale" required>
+          <option value="">Exchange Type</option>
+          <option value="Good">Trade</option>
+          <option value="Played">Sale</option>
+          <option value="Played">Partial Trade Plus Cash</option>
+        </select><br><br>
+
+        <label for="sale-price">Sale Price:</label>
+        <input type="number" id="sale_price" name="sale_price" min="1" max="100000"><br><br>
+
+        <label for="desired-card">Desired Card:</label>
+        <input type="text" id="desired-card" name="desired-card"><br><br>
+      </div>
+
+      <div class="form-row">
+        <label for="psa-grade">PSA Grade:</label>
+        <input type="number" id="psa-grade" name="psa-grade" min="1" max="10"><br><br>
+
+        <label for="image-upload">Image:</label>
+        <input type="file" id="image-upload" name="image-upload" accept="image/*" required><br><br>
+
+        <input type="submit" value="Add Card">
+      </div>
+    </form>
+  </main>
+
+  <script>
+    // Get the desiredCard parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const desiredCard = urlParams.get('desiredCard');
+
+    if (desiredCard) {
+      // Set the value of the desired-card field
+      document.getElementById('desired-card').value = desiredCard;
+    }
+
+    //... (Your existing JavaScript code)...
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Pokemon Exchange</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://js.stripe.com/v3/" data-key="pk_live_51Qv4hbRqFcy2zsE30jLCTmjzbs8vaTXhiZxPxDtlMwKIPiCGVFdpnAsLQwZgzjJcDqqYGfcG0DfqdsbSNVMFN2IF00UPe1SBRj"></script>
+</head>
+<body style="background-image: url('pokemon.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+  <header>
+    <h1>The Pokemon Exchange</h1>
+    <input type="text" id="search" placeholder="Search cards...">
+  </header>
+  <header>
+    <div style="position: absolute; top: 10px; right: 10px;">
+      <button onclick="window.location.href='add_card.html'">List Card (Sale/Trade)</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="featured-cards">
+      <h2>Featured Cards</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="https://tcgplayer-cdn.tcgplayer.com/product/246723_in_1000x1000.jpg" alt="Card 1">
+          <h3>Umbreon VMAX Alt Art Secret Rare</h3>
+          <p class="psa-rating">PSA 10</p>
+          <p class="expansion-set">Evolving Skies</p>
+          <p class="price">$2500</p>
+          <button onclick="buyCard('Umbreon VMAX Alt Art Secret Rare', 2500)">Buy</button>
+          <button onclick="window.location.href='add_card.html?desiredCard=Umbreon VMAX Alt Art Secret Rare'">Trade Request</button>
+        </div>
+        <div class="card">
+          <img src="https://tcgplayer-cdn.tcgplayer.com/product/246733_in_1000x1000.jpg" alt="Card 2">
+          <h3>Rayquaza VMAX Alt Art Secret Rare</h3>
+          <p class="psa-rating">PSA 10</p>
+          <p class="expansion-set">Evolving Skies</p>
+          <p class="price">$1500</p>
+          <button onclick="buyCard('Rayquaza VMAX Alt Art Secret Rare', 1500)">Buy</button>
+          <button onclick="window.location.href='add_card.html?desiredCard=Rayquaza VMAX Alt Art Secret Rare'">Trade Request</button>
+        </div>
+        <div class="card">
+          <img src="https://tcgplayer-cdn.tcgplayer.com/product/246696_in_1000x1000.jpg" alt="Card 3">
+          <h3>Leafeon VMAX Alt Art Secret Rare</h3>
+          <p class="psa-rating">PSA 10</p>
+          <p class="expansion-set">Evolving Skies</p>
+          <p class="price">$1000</p>
+          <button onclick="buyCard('Leafeon VMAX Alt Art Secret Rare', 1000)">Buy</button>
+          <button onclick="window.location.href='add_card.html?desiredCard=Leafeon VMAX Alt Art Secret Rare'">Trade Request</button>
+        </div>
+        <div class="card">
+          <img src="https://tcgplayer-cdn.tcgplayer.com/product/253266_in_1000x1000.jpg" alt="Card 4">
+          <h3>Gengar VMAX Alt Art Secret Rare</h3>
+          <p class="psa-rating">PSA 10</p>
+          <p class="expansion-set">Fusion Strike</p>
+          <p class="price">$1500</p>
+          <button onclick="buyCard('Gengar VMAX Alt Art Secret Rare', 1500)">Buy</button>
+          <button onclick="window.location.href='add_card.html?desiredCard=Gengar VMAX Alt Art Secret Rare'">Trade Request</button>
+        </div>
+        <div class="card">
+          <img src="https://tcgplayer-cdn.tcgplayer.com/product/246756_in_1000x1000.jpg" alt="Card 5">
+          <h3>Glaceon VMAX Alt Art Secret Rare</h3>
+          <p class="psa-rating">PSA 10</p>
+          <p class="expansion-set">Evolving Skies</p>
+          <p class="price">$1250</p>
+          <button onclick="buyCard('Glaceon VMAX Alt Art Secret Rare', 1250)">Buy</button>
+          <button onclick="window.location.href='add_card.html?desiredCard=Glaceon VMAX Alt Art Secret Rare'">Trade Request</button>
+        </div>
+        <div class="card">
+          <img src="https://tcgplayer-cdn.tcgplayer.com/product/253265_in_1000x1000.jpg" alt="Card 6">
+          <h3>Espeon VMAX Alt Art Secret Rare</h3>
+          <p class="psa-rating">PSA 10</p>
+          <p class="expansion-set">Fusion Strike</p>
+          <p class="price">$1500</p>
+          <button onclick="buyCard('Espeon VMAX Alt Art Secret Rare', 1500)">Buy</button>
+          <button onclick="window.location.href='add_card.html?desiredCard=Espeon VMAX Alt Art Secret Rare'">Trade Request</button>
+        </div>
+        <div class="card">
+          <img src="https://tcgplayer-cdn.tcgplayer.com/product/246704_in_1000x1000.jpg" alt="Card 7">
+          <h3>Sylveon VMAX Alt Art Secret Rare</h3>
+          <p class="psa-rating">PSA 10</p>
+          <p class="expansion-set">Evolving Skies</p>
+          <p class="price">$1500</p>
+          <button onclick="buyCard('Sylveon VMAX Alt Art Secret Rare', 1500)">Buy</button>
+          <button onclick="window.location.href='add_card.html?desiredCard=Sylveon VMAX Alt Art Secret Rare'">Trade Request</button>
+        </div>
+        <div class="card">
+          <img src="https://tcgplayer-cdn.tcgplayer.com/product/284137_in_1000x1000.jpg" alt="Card 8">
+          <h3>Giratina V Alt Art Secret Rare</h3>
+          <p class="psa-rating">PSA 10</p>
+          <p class="expansion-set">Lost Origin</p>
+          <p class="price">$1750</p>
+          <button onclick="buyCard('Giratina V Alt Art Secret Rare', 1750)">Buy</button>
+          <button onclick="window.location.href='add_card.html?desiredCard=Giratina V Alt Art Secret Rare'">Trade Request</button>
+        </div>
+        <div class="card">
+          <img src="https://tcgplayer-cdn.tcgplayer.com/product/451834_in_800x800.jpg" alt="Card 9">
+          <h3>Lugia V Alt Art Secret Rare</h3>
+          <p class="psa-rating">PSA 10</p>
+          <p class="expansion-set">Lost Origin</p>
+          <p class="price">$1000</p>
+          <button onclick="buyCard('Lugia V Alt Art Secret Rare', 1000)">Buy</button>
+          <button onclick="window.location.href='add_card.html?desiredCard=Lugia V Alt Art Secret Rare'">Trade Request</button>
+        </div>
+      </div>
+    </section>
+    <div id="card-details"></div>
+  </main>
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
